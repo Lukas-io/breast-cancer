@@ -753,13 +753,13 @@
     }
 
     // Uncomment to add example data button for demo purposes
-    // const buttonsDiv = document.querySelector('.buttons');
-    // const exampleButton = document.createElement('button');
-    // exampleButton.type = 'button';
-    // exampleButton.className = 'btn btn-reset';
-    // exampleButton.innerHTML = '<i class="fas fa-database"></i> Use Example Data';
-    // exampleButton.addEventListener('click', fillExampleData);
-    // buttonsDiv.insertBefore(exampleButton, buttonsDiv.firstChild);
+    const buttonsDiv = document.querySelector('.buttons');
+    const exampleButton = document.createElement('button');
+    exampleButton.type = 'button';
+    exampleButton.className = 'btn btn-reset';
+    exampleButton.innerHTML = '<i class="fas fa-database"></i> Use Example Data';
+    exampleButton.addEventListener('click', fillExampleData);
+    buttonsDiv.insertBefore(exampleButton, buttonsDiv.firstChild);
   </script>
 </body>
 </html>

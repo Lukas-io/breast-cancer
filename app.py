@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 import joblib
 import numpy as np
-from datetime import datetime
+import os
+# from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -22,17 +23,16 @@ def predict():
         if not features or len(features) != 30:
             return jsonify({'error': 'Exactly 30 features are required.'}), 400
 
-        # Reshape and scale
         input_array = np.array(features).reshape(1, -1)
         scaled_input = scaler.transform(input_array)
         prediction = model.predict(scaled_input)[0]
 
         result = "Malignant (Cancerous)" if prediction == 0 else "Benign (Non-Cancerous)"
-
         return jsonify({'prediction': result})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 6100))
+    app.run(host='0.0.0.0', port=port)
