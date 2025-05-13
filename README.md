@@ -35,9 +35,6 @@ A web-based tool that predicts breast cancer classification (Malignant or Benign
    python app.py
    ```
 
-4. **Access the web interface**
-   - Open your browser and navigate to http://127.0.0.1:5000
-
 ## 🧠 How It Works
 
 1. User inputs the required diagnostic measurements
@@ -52,12 +49,8 @@ A web-based tool that predicts breast cancer classification (Malignant or Benign
 ```
 breast-cancer-predictor/
 ├── app.py                  # Flask application server
-├── models/
-│   ├── scaler.pkl          # Trained StandardScaler
-│   └── svm_model.pkl       # Trained SVM model
-├── static/
-│   ├── css/                # Stylesheet files
-│   └── js/                 # JavaScript files
+├── scaler.pkl          # Trained StandardScaler
+│── svm_model.pkl       # Trained SVM model               # JavaScript files
 └── templates/
     └── index.html          # Web interface
 ```
@@ -70,11 +63,6 @@ The SVM model was trained on the Wisconsin Breast Cancer dataset from scikit-lea
 2. Model selection and hyperparameter tuning
 3. Cross-validation for performance assessment
 
-To retrain the model (optional):
-```bash
-python train.py
-```
-
 ## ⚠️ Disclaimer
 
 This tool is for **educational and demonstration purposes only**. It is **not intended for clinical use** and should not replace professional medical diagnosis. Always consult qualified healthcare providers for medical advice and diagnosis.
@@ -86,7 +74,3 @@ The Wisconsin Breast Cancer dataset contains features computed from digitized im
 ## 📜 License
 
 [MIT License](LICENSE)
-
-## 📧 Contact
-
-For questions or feedback, please open an issue on this repository or contact [your-email@example.com].
